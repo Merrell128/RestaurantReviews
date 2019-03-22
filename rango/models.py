@@ -35,17 +35,14 @@ class Page(models.Model):
 	def __str__(self): # For Python 2, use __unicode__ too
 		return self.title
 		
-		
 class Review(models.Model):
 	page = models.ForeignKey(Page)
-	title = models.CharField(max_length=128)
 	text = models.CharField(max_length=128)
 	rating = models.IntegerField(default = 0)
 
 	def __str__(self): # For Python 2, use __unicode__ too
-		return self.title
+		return self.text
 		
-	
 class UserProfile(models.Model):
 	# This line is required. Links UserProfile to a User model instance. 
 	user = models.OneToOneField(User)

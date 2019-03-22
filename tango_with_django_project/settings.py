@@ -20,6 +20,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -29,7 +30,7 @@ SECRET_KEY = 'dk_%c24sq&c1)-cg=0de*&l6naxq3rllsrihtl-@r*s_2iednp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['http://2310969m.pythonanywhere.com']
 
 
 # Application definition

@@ -45,7 +45,6 @@ class PageForm(forms.ModelForm):
 			return cleaned_data
 			
 class ReviewForm(forms.ModelForm):
-	title = forms.CharField(max_length=128,help_text="Please enter the title of your review.")
 	text = forms.CharField(max_length=128,help_text="Your review.")
 	rating = forms.IntegerField(initial=0 ,help_text="Please enter your rating of this restaurant.")
 			

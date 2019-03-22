@@ -113,6 +113,27 @@ def add_category(request):
 	# Render the form with error messages (if any).
 	return render(request, 'rango/add_category.html', {'form': form})
 	
+def add_review(request, restaurant_name_slug):
+	try:
+			review = Restaurant.objects.get(slug=review_name_slug)
+	except Review.DoesNotExist:
+			review = None
+
+	form = PageForm()
+	if request.method == 'POST':
+			form = PageForm(request.POST)
+			if form.is_valid():
+					if category:
+							page = form.save(commit=False)
+							page.review = review
+							page.views = 0
+							page.save()
+							return show_restaurant(request, review_name_slug)
+			else:
+					print(form.errors)
+                        
+	context_dict = {'form':form, 'review': review}
+	return render(request, 'rango/add_page.html', context_dict)
 	
 def show_page(request, page_title_slug):
 
