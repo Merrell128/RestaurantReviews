@@ -1,0 +1,33 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Add Page
+{% endblock %}
+
+{% block body_block %}
+<head>
+	<link rel="stylesheet" href="{% static "css/styles.css" %}"/>
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+</head>
+		{% if category %}
+			<h1>Add a Restaurant to {{category.name}}</h1>
+				<form id="page_form" method="post" action="/rango/category/{{ category.slug }}/add_page/">
+					{% csrf_token %}
+					{% for hidden in form.hidden_fields %}
+						
+						{{ hidden }}
+						
+					{% endfor %}
+					{% for field in form.visible_fields %}
+						{{ field.errors }}
+						{{ field.help_text }}
+						{{ field }}
+					{% endfor %}
+					<input type="submit" name="submit" value="Create Restaurant" />
+			</form>
+		{% else %}
+			The specified cuisine does not exist!
+		{% endif %}
+
+{% endblock %}

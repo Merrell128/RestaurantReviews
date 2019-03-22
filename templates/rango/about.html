@@ -1,0 +1,37 @@
+{% extends 'rango/base.html' %}
+
+{% load staticfiles %}
+
+
+
+{% block title_block %}
+
+    About
+
+{% endblock %}
+
+
+
+{% block body_block %}
+
+<html>
+<head>
+	<link rel="stylesheet" href="{% static "css/styles.css" %}"/>
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+</head>
+	<div class="shiftRight">
+      <div>
+
+          <h1>About Page</h1>
+			This is Restaurant Reviews
+			Here you can add your own restaurant, as well as view and review restaurants
+
+      </div>
+	  
+	<div>
+		<p>visits: {{ visits }} </p>
+	</div>
+	</div>
+{% endblock %}
+
+</html>

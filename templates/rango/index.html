@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Index
+{% endblock %}
+
+
+{% block body_block %}
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="{% static "css/styles.css" %}"/>
+		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+		<title>Restaurant Reviews</title>
+		
+	</head>
+
+
+<body>	
+	
+	
+
+	<div id="index-container">
+		<h1 id="hometitle">Welcome To Restaurant Reviews</h1>
+		<div id="index-content">
+		
+			<div id="most-popular">
+				<h2>Most Popular Cuisines</h2>
+					{% if categories %}
+					<ul>
+						{% for category in categories %}
+						<li>
+							<a href="{% url 'show_category' category.slug %}">{{ category.name }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+				{% else %} 
+					<strong>There are no cuisines present.</strong>
+				{% endif %}
+			</div>
+	
+			
+			<div id="most-viewed">
+				<h2>Most Viewed Restaurants</h2>
+					{% if pages %}
+				<ul>
+					{% for page in pages %}
+					<li><a href="{{ page.url }}">{{ page.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% else %}
+					<strong>No restaurants currently in category.</strong>
+		{% endif %}
+			</div>
+{% endblock %}
+
+		</div>
+	</div>
+</body>
+</html>

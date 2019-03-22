@@ -1,0 +1,37 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Register
+{% endblock %}
+
+{% block body_block %}
+<html>
+	<head>
+		<link rel="stylesheet" href="{% static "css/styles.css" %}"/>
+		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+	</head>
+	
+	<div class="shiftRight">
+	<h1>Register for Restaurant Reviews</h1>
+	{% if registered %}
+		<strong>Thank you for registering!</strong><br>
+		<a href="{% url 'index' %}">Return to the homepage.</a><br />
+	{% else %}
+		 
+		<form id="user_form" method="post" action="{% url 'register' %}"
+		enctype="multipart/form-data">
+
+		{% csrf_token %}
+		
+		
+		{{ user_form.as_p }}
+		
+
+		<!-- add form button -->
+		<input type="submit" name="submit" value="Register" />
+	</form>
+	{% endif %}
+{% endblock %}
+	</div>
+</html>

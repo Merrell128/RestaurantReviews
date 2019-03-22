@@ -1,0 +1,74 @@
+
+
+#index-container {
+	width: 70%;
+	margin: 0 auto;
+}
+
+#hometitle {
+	
+	padding-top:4%;
+	color: blue;
+	font-family: 'Oswald';font-size: 40px;
+	text-align: center;
+}
+
+body {
+	font-family: 'Oswald';
+	background-color: white;
+	
+}
+
+.navbar{
+	background-color: #80f0f0;
+	
+}
+
+#most-popular {
+	padding-top: 10%;
+	float: right;
+	
+	
+	overflow: auto;
+	
+
+}
+
+#most-viewed {
+	padding-top: 10%;
+	float: left;
+	
+	
+	overflow: auto;
+}
+
+#index-content{
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+	overflow:auto;	
+}
+
+#login{
+  padding-top:10px;
+  padding-left:10px;
+  font-family: 'Oswald';
+  width: 500px;
+  clear: both;
+}
+#login input {
+  font-family: 'Oswald';
+  width: 100%;
+  clear: both;
+}
+
+.shiftRight {
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#page_form{
+	
+	display: inline;
+}
