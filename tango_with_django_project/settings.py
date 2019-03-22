@@ -30,7 +30,7 @@ SECRET_KEY = 'dk_%c24sq&c1)-cg=0de*&l6naxq3rllsrihtl-@r*s_2iednp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['http://2310969m.pythonanywhere.com']
+ALLOWED_HOSTS = ['http://charstefanos.pythonanywhere.com']
 
 
 # Application definition
