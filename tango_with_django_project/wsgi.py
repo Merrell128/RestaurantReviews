@@ -1,16 +1,21 @@
-"""
-WSGI config for tango_with_django_project project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
-"""
-
 import os
+import sys
+# Add your project's directory the PYTHONPATH
+path = '/home/charstefanos/.virtualenvs/mysite-virtualenv'
+if path not in sys.path:
+	sys.path.append(path)
 
-from django.core.wsgi import get_wsgi_application
+# Move to the project directory
+os.chdir(path)
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tango_with_django_project.settings")
+# Tell Django where the settings.py module is located
+os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+					'tango_with_django_project.settings')
+					
+# Import your Django project's configuration
+import django
+django.setup()
 
-application = get_wsgi_application()
+# Import the Django WSGI to handle any requests
+import django.core.handlers.wsgi
+application = django.core.handlers.wsgi.WSGIHandler()
